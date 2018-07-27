@@ -9,7 +9,7 @@ import android.widget.EditText;
 public class Main1 extends AppCompatActivity {
     private EditText et1, et2, et3;
     private Button confirmar, reset;
-    private ListenerConfirmar listenerConfirmar;
+    private ListenConfirmar listenerConfirmar;
     private ListenerReset listenerReset;
 
     @Override
@@ -17,8 +17,13 @@ public class Main1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main1);
 
+        et1 = findViewById(R.id.et1);
+        et2 = findViewById(R.id.et2);
+        et3 = findViewById(R.id.et3);
         confirmar = findViewById(R.id.confirmar);
         reset = findViewById(R.id.reset);
-        
+        listenerConfirmar = new ListenConfirmar(this);
+        listenerReset = new ListenerReset(this);
+
     }
 }
